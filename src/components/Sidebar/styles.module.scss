@@ -3,17 +3,60 @@
 .sidebar {
 	background-color: $sideBarColor;
 	height: 100vh;
-	width: 22%;
+	width: 20%;
 	position: sticky;
 	top: 0;
 	padding: 1vw 0;
 
 	.userDetails {
 		text-align: center;
-		padding: 2vw 0 1.2vw;
+		margin: 2vw 0 1.2vw;
 		& > p {
 			margin-top: 1vw;
 			font-size: 1.4vw;
+		}
+	}
+
+	.menuList {
+		.menuItem {
+			padding: 0.4vw 14%;
+			margin: 0.7vw 0;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+
+			&.disabled {
+				cursor: not-allowed;
+			}
+
+			&.active {
+				pointer-events: none;
+				color: $lightBlue;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					height: 100%;
+					width: 0.25vw;
+					background-color: $lightBlue;
+				}
+
+				& > svg {
+					fill: $lightBlue;
+				}
+			}
+
+			& svg {
+				height: 1.03vw;
+				width: 1.03vw;
+			}
+
+			& > span {
+				font-size: 1.05vw;
+				margin-left: 0.7vw;
+			}
 		}
 	}
 }
