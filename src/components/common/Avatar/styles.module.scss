@@ -1,0 +1,34 @@
+@import '/src/styles/colors';
+
+.avatar {
+	background-color: $cardBackground;
+	height: 6.5vw;
+	width: 6.5vw;
+	border-radius: 50%;
+	overflow: hidden;
+	display: inline-block;
+
+	&.extraSmall {
+		height: 2.8vw;
+		width: 2.8vw;
+	}
+
+	&.small {
+		height: 4.5vw;
+		width: 4.5vw;
+	}
+
+	&.large {
+		height: 8vw;
+		width: 8vw;
+	}
+
+	& > img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
