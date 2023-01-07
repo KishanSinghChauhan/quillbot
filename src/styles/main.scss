@@ -1,0 +1,17 @@
+@import './colors';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+body {
+	background-color: $bodyColor;
+	color: $textColor;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
