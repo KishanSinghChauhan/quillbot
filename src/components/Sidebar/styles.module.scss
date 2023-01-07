@@ -1,0 +1,9 @@
+@import '/src/styles/colors';
+
+.sidebar {
+	background-color: $sideBarColor;
+	height: 100vh;
+	width: 22%;
+	position: sticky;
+	top: 0;
+}
