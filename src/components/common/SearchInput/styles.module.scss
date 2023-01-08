@@ -1,0 +1,67 @@
+@import '/src/styles/colors';
+
+.inputWrapper {
+	background-color: transparent;
+	border-radius: 0.625vw;
+	overflow: hidden;
+	width: 3.2vw;
+	max-width: 40vw;
+	height: 4.2vw;
+	transition: all 0.6s ease-in-out;
+
+	&.open {
+		width: 100%;
+		background-color: #1a2536;
+
+		& .closeIcon {
+			visibility: visible;
+			transition: all 0.1s ease-in-out;
+		}
+
+		& input {
+			visibility: visible;
+			transition: all 0.1s ease-in-out;
+		}
+	}
+
+	.icon {
+		height: 1.6vw;
+		width: 1.6vw;
+		cursor: pointer;
+		left: 1.1vw;
+	}
+
+	.closeIcon {
+		height: 1.1vw;
+		width: 1.1vw;
+		cursor: pointer;
+		right: 1.2vw;
+		visibility: hidden;
+		transition: all 0.2s ease-in-out 0.4s;
+	}
+
+	.icon,
+	.closeIcon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+	}
+
+	& input {
+		background-color: transparent;
+		border: 0;
+		outline: none;
+		padding: 0 3.4vw;
+		color: $textColor;
+		font-size: 1.1vw;
+		height: 100%;
+		width: 100%;
+		visibility: hidden;
+		transition: all 0.2s ease-in-out 0.4s;
+
+		&::placeholder {
+			color: #7b828e;
+		}
+	}
+}
