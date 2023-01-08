@@ -1,0 +1,53 @@
+@import '/src/styles/_colors';
+@import '/src/styles/mixins';
+
+.card {
+	padding: 0.75vw;
+	border-radius: 0.8vw;
+	background-color: $cardBackground;
+	cursor: pointer;
+
+	&.active::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: calc(100% - 0.23vw);
+		height: calc(100% - 0.23vw);
+		border: 0.23vw solid $lightBlue;
+		border-radius: 0.8vw;
+		background-color: transparent;
+	}
+
+	& > img {
+		width: 100%;
+		object-fit: cover;
+		border-radius: 0.5vw;
+		height: 15.2vw;
+		background-color: $sideBarColor;
+	}
+
+	& > p {
+		font-size: 1.05vw;
+		margin: 0.5vw 0;
+		@include MontSerrat;
+		font-weight: 500;
+		text-transform: capitalize;
+	}
+
+	& .icons {
+		display: flex;
+		align-items: center;
+		margin-top: 1vw;
+
+		svg {
+			height: 1.4vw;
+			width: 1.4vw;
+
+			&:first-child {
+				margin-right: 1vw;
+			}
+		}
+	}
+}

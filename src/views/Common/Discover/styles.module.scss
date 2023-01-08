@@ -1,0 +1,10 @@
+.movieList {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -0.8vw;
+
+	& .movieCard {
+		width: 20%;
+		padding: 1.2vw 0.8vw;
+	}
+}
