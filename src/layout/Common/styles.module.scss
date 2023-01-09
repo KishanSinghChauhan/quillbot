@@ -16,6 +16,11 @@
 			width: 100%;
 		}
 
+		@include mobile {
+			flex: none;
+			width: 100%;
+		}
+
 		.mainSec {
 			padding: 0 2.2vw;
 

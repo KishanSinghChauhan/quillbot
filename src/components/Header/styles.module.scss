@@ -15,6 +15,27 @@
 		padding: 4vw 3.85vw;
 	}
 
+	& .leftSec {
+		display: flex;
+		align-items: center;
+		width: 80%;
+
+		& .menuBarIcon {
+			fill: $textColor;
+			height: 1.6vw;
+			width: 1.6vw;
+			margin-right: 1.2vw;
+			display: none;
+
+			@include mobile {
+				height: 4.4vw;
+				width: 4.4vw;
+				margin-right: 3.2vw;
+				display: block;
+			}
+		}
+	}
+
 	& .rightSec {
 		display: flex;
 		align-items: center;

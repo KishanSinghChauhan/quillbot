@@ -12,6 +12,35 @@
 	@include mobile {
 		width: 80%;
 		padding: 3.2vw 0;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 9;
+		transition: transform 0.4s ease-in-out;
+		transform: translateX(calc(-100% - 12vw));
+	}
+
+	.close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translateX(100%);
+		background-color: $sideBarColor;
+		height: 10vw;
+		width: 10vw;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		border: 0;
+
+		@include mobile {
+			display: flex;
+		}
+
+		& svg {
+			height: 40%;
+			width: 40%;
+		}
 	}
 
 	.userDetails {
@@ -28,7 +57,7 @@
 			@include MontSerrat;
 
 			@include mobile {
-				font-size: 4vw;
+				font-size: 4.2vw;
 				margin-top: 3.2vw;
 			}
 		}
@@ -78,8 +107,8 @@
 				width: 1.03vw;
 
 				@include mobile {
-					width: 3vw;
-					height: 3vw;
+					width: 3.2vw;
+					height: 3.2vw;
 				}
 			}
 
@@ -88,7 +117,7 @@
 				margin-left: 0.7vw;
 
 				@include mobile {
-					font-size: 3vw;
+					font-size: 3.2vw;
 					margin-left: 2vw;
 				}
 			}

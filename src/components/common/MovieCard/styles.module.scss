@@ -51,6 +51,9 @@
 		@include MontSerrat;
 		font-weight: 500;
 		text-transform: capitalize;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 
 		@include mobile {
 			font-size: 4vw;
