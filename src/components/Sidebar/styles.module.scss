@@ -9,13 +9,28 @@
 	top: 0;
 	padding: 1vw 0;
 
+	@include mobile {
+		width: 80%;
+		padding: 3.2vw 0;
+	}
+
 	.userDetails {
 		text-align: center;
 		margin: 2vw 0 1.2vw;
+
+		@include mobile {
+			margin: 4vw 0 3.5vw;
+		}
+
 		& > p {
 			margin-top: 1vw;
 			font-size: 1.4vw;
 			@include MontSerrat;
+
+			@include mobile {
+				font-size: 4vw;
+				margin-top: 3.2vw;
+			}
 		}
 	}
 
@@ -26,6 +41,10 @@
 			cursor: pointer;
 			display: flex;
 			align-items: center;
+
+			@include mobile {
+				padding: 2vw 10%;
+			}
 
 			&.disabled {
 				cursor: not-allowed;
@@ -43,6 +62,10 @@
 					height: 100%;
 					width: 0.25vw;
 					background-color: $lightBlue;
+
+					@include mobile {
+						width: 1vw;
+					}
 				}
 
 				& > svg {
@@ -53,11 +76,21 @@
 			& svg {
 				height: 1.03vw;
 				width: 1.03vw;
+
+				@include mobile {
+					width: 3vw;
+					height: 3vw;
+				}
 			}
 
 			& > span {
 				font-size: 1.05vw;
 				margin-left: 0.7vw;
+
+				@include mobile {
+					font-size: 3vw;
+					margin-left: 2vw;
+				}
 			}
 		}
 	}

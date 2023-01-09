@@ -1,0 +1,37 @@
+@import '/src/styles/colors';
+@import '/src/styles/mixins';
+
+.progressSec {
+	display: flex;
+	align-items: center;
+
+	.progressWrapper {
+		width: 30%;
+		background-color: #283647;
+		height: 0.75vw;
+		border-radius: 0.625vw;
+		overflow: hidden;
+		margin-right: 1.5vw;
+
+		@include mobile {
+			margin-right: 4vw;
+			border-radius: 1.2vw;
+			height: 2.2vw;
+			width: 60%;
+		}
+
+		.progress {
+			height: 100%;
+			background-color: $lightBlue;
+			border-radius: 0.625vw;
+		}
+	}
+
+	& span {
+		font-size: 1.112vw;
+
+		@include mobile {
+			font-size: 3.5vw;
+		}
+	}
+}

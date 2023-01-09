@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import clsx from 'clsx';
 import Avatar from 'components/common/Avatar';
 import Divider from 'components/common/Divider';
@@ -17,7 +18,6 @@ const Sidebar = () => {
 				<p>Eric Hoffman</p>
 			</div>
 			{sidebarMenuItem.map((_items, i) => (
-				// eslint-disable-next-line react/no-array-index-key
 				<Fragment key={i}>
 					<Divider />
 					<div className={styles.menuList}>

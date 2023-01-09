@@ -1,4 +1,5 @@
 @import '/src/styles/colors';
+@import '/src/styles/mixins';
 
 .avatar {
 	background-color: $cardBackground;
@@ -8,19 +9,39 @@
 	overflow: hidden;
 	display: inline-block;
 
+	@include mobile {
+		height: 22vw;
+		width: 22vw;
+	}
+
 	&.extraSmall {
 		height: 2.8vw;
 		width: 2.8vw;
+
+		@include mobile {
+			height: 12vw;
+			width: 12vw;
+		}
 	}
 
 	&.small {
 		height: 4.5vw;
 		width: 4.5vw;
+
+		@include mobile {
+			height: 17vw;
+			width: 17vw;
+		}
 	}
 
 	&.large {
 		height: 8vw;
 		width: 8vw;
+
+		@include mobile {
+			height: 28vw;
+			width: 28vw;
+		}
 	}
 
 	& > img {

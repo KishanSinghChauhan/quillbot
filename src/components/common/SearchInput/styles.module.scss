@@ -1,4 +1,5 @@
 @import '/src/styles/colors';
+@import '/src/styles/mixins';
 
 .inputWrapper {
 	background-color: transparent;
@@ -9,18 +10,23 @@
 	height: 4.2vw;
 	transition: all 0.6s ease-in-out;
 
+	@include mobile {
+		border-radius: 1.4vw;
+		width: 5.6vw;
+		height: 10vw;
+		max-width: 70vw;
+	}
+
 	&.open {
 		width: 100%;
 		background-color: #1a2536;
 
 		& .closeIcon {
 			visibility: visible;
-			transition: all 0.1s ease-in-out;
 		}
 
 		& input {
 			visibility: visible;
-			transition: all 0.1s ease-in-out;
 		}
 	}
 
@@ -29,6 +35,12 @@
 		width: 1.6vw;
 		cursor: pointer;
 		left: 1.1vw;
+
+		@include mobile {
+			height: 4vw;
+			width: 4vw;
+			left: 2.2vw;
+		}
 	}
 
 	.closeIcon {
@@ -38,6 +50,12 @@
 		right: 1.2vw;
 		visibility: hidden;
 		transition: all 0.2s ease-in-out 0.4s;
+
+		@include mobile {
+			height: 3.2vw;
+			width: 3.2vw;
+			right: 2.2vw;
+		}
 	}
 
 	.icon,
@@ -59,6 +77,11 @@
 		width: 100%;
 		visibility: hidden;
 		transition: all 0.2s ease-in-out 0.4s;
+
+		@include mobile {
+			padding: 0 8vw;
+			font-size: 3.2vw;
+		}
 
 		&::placeholder {
 			color: #7b828e;

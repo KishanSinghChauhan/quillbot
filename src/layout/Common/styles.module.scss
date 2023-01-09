@@ -1,12 +1,27 @@
+@import '/src/styles/mixins';
+
 .commonLayout {
 	display: flex;
+
+	@include mobile {
+		display: block;
+	}
 
 	.rightSec {
 		flex: 1;
 		margin-top: 1.6vw;
 
+		@include mobile {
+			flex: none;
+			width: 100%;
+		}
+
 		.mainSec {
 			padding: 0 2.2vw;
+
+			@include mobile {
+				padding: 0 3.85vw 3.85vw;
+			}
 		}
 	}
 }

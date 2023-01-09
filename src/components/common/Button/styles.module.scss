@@ -1,0 +1,30 @@
+@import '/src/styles/colors';
+@import '/src/styles/mixins';
+
+.button {
+	border: 0.12vw solid $lightBlue;
+	border-radius: 0.625vw;
+	height: 2.64vw;
+	padding: 0 2vw;
+	font-size: 1.112vw;
+	font-weight: 700;
+	cursor: pointer;
+
+	@include mobile {
+		border-radius: 1.2vw;
+		padding: 0 4vw;
+		font-size: 3.4vw;
+		font-weight: 600;
+		border: 0.6vw solid $lightBlue;
+		height: 8.5vw;
+	}
+
+	&.outlined {
+		background-color: transparent;
+		color: $lightBlue;
+	}
+
+	&.filled {
+		background-color: $lightBlue;
+	}
+}

@@ -1,3 +1,38 @@
 @mixin MontSerrat {
 	font-family: 'Montserrat', sans-serif;
 }
+
+$phone0-width: 320px;
+$iphone5-width: 360px;
+$iphone6-width: 375px;
+$iphone6-width2: 425px;
+$tablet-width: 768px;
+
+@mixin phone0-width {
+	@media (max-width: #{$iphone5-width}) {
+		@content;
+	}
+}
+
+@mixin iphone5 {
+	@media (max-width: #{$iphone5-width}) {
+		@content;
+	}
+}
+
+@mixin iphone6 {
+	@media (min-width: #{$iphone6-width}) and (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+@mixin l_mobile {
+	@media (min-width: #{$iphone6-width2}) and (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}

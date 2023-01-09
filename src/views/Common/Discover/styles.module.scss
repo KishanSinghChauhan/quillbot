@@ -1,10 +1,21 @@
+@import '/src/styles/mixins';
+
 .movieList {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 -0.8vw;
 
+	@include mobile {
+		margin: 0 -1.9vw;
+	}
+
 	& .movieCard {
 		width: 20%;
 		padding: 1.2vw 0.8vw;
+
+		@include mobile {
+			padding: 1.9vw;
+			width: 50%;
+		}
 	}
 }
