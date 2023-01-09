@@ -1,11 +1,12 @@
 import Button from 'components/common/Button';
 import Progress from 'components/common/Progress';
 import { FC } from 'react';
+import { MovieProps } from 'types';
 
 import styles from './styles.module.scss';
 
 type Props = {
-	data: any;
+	data: MovieProps;
 };
 
 const MovieCardDetail: FC<Props> = ({ data }) => (

@@ -3,23 +3,19 @@ import { ReactComponent as CloseIcon } from 'assets/close.svg';
 import clsx from 'clsx';
 import Avatar from 'components/common/Avatar';
 import Divider from 'components/common/Divider';
-import { Fragment } from 'react';
+import { FC, Fragment } from 'react';
 import { useLocation } from 'react-router-dom';
+import { MenuProp } from 'types';
 
 import sidebarMenuItem from './constant';
 import styles from './styles.module.scss';
 
-const Sidebar = () => {
+const Sidebar: FC<MenuProp> = ({ handleMenu }) => {
 	const { pathname } = useLocation();
-
-	const handleSidebar = () => {
-		const el = document.querySelector('#sidebar') as HTMLDivElement;
-		el?.classList.remove('show-sidebar');
-	};
 
 	return (
 		<div className={styles.sidebar} id='sidebar'>
-			<button className={styles.close} type='button' onClick={handleSidebar}>
+			<button className={styles.close} type='button' onClick={handleMenu}>
 				<CloseIcon />
 			</button>
 			<div className={styles.userDetails}>

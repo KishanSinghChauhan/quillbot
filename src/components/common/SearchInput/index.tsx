@@ -1,39 +1,15 @@
 import { ReactComponent as CloseIcon } from 'assets/close.svg';
 import { ReactComponent as SearchIcon } from 'assets/search.svg';
 import clsx from 'clsx';
-import { useEffect, useRef, useState } from 'react';
-import useDiscover from 'views/Common/Discover/useDiscover';
+import { useDispatch } from 'react-redux';
+import { handleSearch } from 'redux/discoverSlice';
 
 import styles from './styles.module.scss';
+import useSearchInput from './useSearchInput';
 
 const SearchInput = () => {
-	const [open, setOpen] = useState(false);
-	const ref = useRef<HTMLDivElement | null>(null);
-	const inputRef = useRef<HTMLInputElement | null>(null);
-	const { handleChange } = useDiscover();
-
-	useEffect(() => {
-		const handleClickOutside = (event: any) => {
-			if (
-				ref.current &&
-				!ref.current.contains(event?.target) &&
-				!inputRef.current?.value
-			) {
-				setOpen(false);
-			}
-		};
-
-		document.addEventListener('click', handleClickOutside);
-		return () => {
-			document.removeEventListener('click', handleClickOutside);
-		};
-	}, []);
-
-	const handleClear = () => {
-		if (inputRef.current) {
-			inputRef.current.value = '';
-		}
-	};
+	const dispatch = useDispatch();
+	const { ref, inputRef, handleClear, open, setOpen } = useSearchInput();
 
 	return (
 		<div
@@ -50,9 +26,15 @@ const SearchInput = () => {
 			<input
 				placeholder='Title, Movies, Keyword'
 				ref={inputRef}
-				onChange={e => handleChange(e.target.value)}
+				onChange={e => dispatch(handleSearch(e.target.value))}
 			/>
-			<CloseIcon className={styles.closeIcon} onClick={handleClear} />
+			<CloseIcon
+				className={styles.closeIcon}
+				onClick={() => {
+					handleClear();
+					dispatch(handleSearch(''));
+				}}
+			/>
 		</div>
 	);
 };
