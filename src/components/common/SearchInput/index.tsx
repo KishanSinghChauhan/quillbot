@@ -9,7 +9,8 @@ import useSearchInput from './useSearchInput';
 
 const SearchInput = () => {
 	const dispatch = useDispatch();
-	const { ref, inputRef, handleClear, open, setOpen } = useSearchInput();
+	const { ref, inputRef, handleClear, open, handleSearchOpen } =
+		useSearchInput();
 
 	return (
 		<div
@@ -18,8 +19,8 @@ const SearchInput = () => {
 			})}
 			role='button'
 			tabIndex={0}
-			onClick={() => setOpen(true)}
-			onKeyPress={() => setOpen(true)}
+			onClick={handleSearchOpen}
+			onKeyPress={handleSearchOpen}
 			ref={ref}
 		>
 			<SearchIcon className={styles.icon} />

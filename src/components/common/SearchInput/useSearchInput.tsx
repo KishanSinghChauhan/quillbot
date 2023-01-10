@@ -28,12 +28,17 @@ const useSearchInput = () => {
 		}
 	};
 
+	const handleSearchOpen = () => {
+		setOpen(true);
+		inputRef.current?.focus();
+	};
+
 	return {
 		handleClear,
 		open,
 		ref,
 		inputRef,
-		setOpen,
+		handleSearchOpen,
 	};
 };
 

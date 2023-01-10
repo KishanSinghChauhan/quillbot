@@ -19,3 +19,7 @@ body {
 .show-sidebar {
 	transform: translateX(0) !important;
 }
+
+.disable-scroll {
+	overflow: hidden;
+}
