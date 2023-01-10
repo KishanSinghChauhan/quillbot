@@ -18,4 +18,14 @@
 			width: 50%;
 		}
 	}
+
+	& .emptyText {
+		margin: 3vw 0.8vw 0;
+		font-size: 1.4vw;
+
+		@include mobile {
+			margin: 5vw 1.9vw 0;
+			font-size: 4vw;
+		}
+	}
 }
